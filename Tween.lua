@@ -1,4 +1,4 @@
-Class = require 'class'
+Class = require 'lib.class'
 
 local function lerp(a, b, t)
 	return a * (1 - t) + b * t
@@ -31,16 +31,6 @@ end
 -- end
 
 function Tween:update(dt)
-	-- for i = 1, #self.activeTweens do
-	-- 	if t <= 1 then
-	-- 		self.activeTweens[i].object[self.activeTweens[i].attr] = lerp(self.activeTweens[i].from, self.activeTweens[i].to, self.activeTweens[i].func(t))
-	-- 		t = t + dt / self.activeTweens[i].duration
-	-- 	else
-	-- 		t = 0
-	-- 		self.activeTweens[i].object[self.activeTweens[i].attr] = self.activeTweens[i].to
-	-- 		table.remove(self.activeTweens, i)
-	-- 	end
-	-- end
 	if not self.complete then
 		if self.t <= 1 then
 			self.object[self.attr] = lerp(self.from, self.to, self.func(self.t))

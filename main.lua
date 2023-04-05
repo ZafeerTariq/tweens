@@ -1,5 +1,6 @@
-require 'Projectile'
+require 'lib.Projectile'
 require 'Tween'
+require 'easingFunctions'
 
 local start = 3
 
@@ -73,6 +74,15 @@ end
 function love.draw()
 	love.graphics.setNewFont(50)
 	love.graphics.print(tostring(love.timer.getFPS()), 1500, 40)
+
+	love.graphics.setNewFont(40)
+	love.graphics.printf("Press 'Space' to start Tween", 0, 600, 1600, "center")
+
+	love.graphics.setNewFont(25)
+	love.graphics.print("2 seconds", 250, 150)
+
+	love.graphics.setNewFont(25)
+	love.graphics.print("4 seconds", 250, 450)
 
 	love.graphics.rectangle("fill", 400, 200,800, 50)
 	Projectile1:render()
